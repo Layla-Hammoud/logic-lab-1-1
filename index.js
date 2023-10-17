@@ -103,6 +103,7 @@ const displayStudentsInfo = () => {
   }
 };
 // displayStudentsInfo()
+//B
 const averageGrade = () => {
   let sum = 0;
   for (let i = 0; i < students.length; i++) {
@@ -112,11 +113,27 @@ const averageGrade = () => {
   return average;
 };
 // console.log(averageGrade())
-const failedStudents = () =>{
-    const arr = [...students]
-    const passedStudents = arr.filter((student) => student.grade > 60)
-    let names = [];
-    passedStudents.forEach((student)=>names.push(student.name))
-    return `The number of students got more than 60 are ${passedStudents.length}: ${names}`
-}
-console.log(failedStudents())
+//C
+const failedStudents = () => {
+  const arr = [...students];
+  const passedStudents = arr.filter((student) => student.grade > 60);
+  let names = [];
+  passedStudents.forEach((student) => names.push(student.name));
+  return `The number of students got more than 60 are ${passedStudents.length}: ${names}`;
+};
+// console.log(failedStudents())
+//D
+const sortStudents = () => {
+  let arr = [...students];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j].grade > arr[i].grade) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      }
+    }
+  }
+  return arr
+};
+console.log(sortStudents())
