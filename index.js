@@ -79,10 +79,25 @@ const findNumberIn2DArray = (number) => {
   for (let i = 0; i < array4.length; i++) {
     for (let j = 0; j < array4[i].length; j++) {
       if (number == array4[i][j]) {
-        return `its position is at row ${i+1} and column ${j+1}`;
+        return `its position is at row ${i + 1} and column ${j + 1}`;
       }
     }
   }
   return `not found`;
 };
-console.log(findNumberIn2DArray(9))
+// console.log(findNumberIn2DArray(9))
+//Exercice 5
+const students = [
+  { id: 5, name: "Rayan", grade: 73 },
+  { id: 8, name: "Marwa", grade: 50 },
+  { id: 10, name: "Basem", grade: 82 },
+  { id: 12, name: "Sam", grade: 90 },
+  { id: 20, name: "Tala", grade: 51 },
+];
+//A
+const displayStudentsInfo = () =>{
+    for(let i = 0; i<students.length;i++){
+       console.log(`The student of id ${students[i].id} whose name is ${students[i].name} got a grade ${students[i].grade}.`) 
+    }
+}
+displayStudentsInfo()
