@@ -51,4 +51,19 @@ const initialize2DArray = () => {
   }
   return array;
 };
-console.log(initialize2DArray());
+// console.log(initialize2DArray());
+//Exercice 3
+const initialize2DSquareArray = () => {
+    let array = [];
+    let sumDiagonals = 0
+    for (let i = 0; i < 5; i++) {
+      array.push([]);
+      for (let j = 0; j < 5; j++) {
+        array[i].push(generateRandomNumber());
+      }
+      sumDiagonals += array[i][i]
+    }
+    console.log(array)
+    return `the sum of the dioganals ${sumDiagonals}`;
+  };
+//   console.log(initialize2DSquareArray());
