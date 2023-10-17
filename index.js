@@ -47,23 +47,42 @@ const initialize2DArray = () => {
     for (let j = 0; j < 5; j++) {
       array[i].push(generateRandomNumber());
     }
-    console.log(`row ${i+1} -> ${array[i]}`);
+    console.log(`row ${i + 1} -> ${array[i]}`);
   }
   return array;
 };
 // console.log(initialize2DArray());
 //Exercice 3
 const initialize2DSquareArray = () => {
-    let array = [];
-    let sumDiagonals = 0
-    for (let i = 0; i < 5; i++) {
-      array.push([]);
-      for (let j = 0; j < 5; j++) {
-        array[i].push(generateRandomNumber());
-      }
-      sumDiagonals += array[i][i]
+  let array = [];
+  let sumDiagonals = 0;
+  for (let i = 0; i < 5; i++) {
+    array.push([]);
+    for (let j = 0; j < 5; j++) {
+      array[i].push(generateRandomNumber());
     }
-    console.log(array)
-    return `the sum of the dioganals ${sumDiagonals}`;
-  };
-//   console.log(initialize2DSquareArray());
+    sumDiagonals += array[i][i];
+  }
+  console.log(array);
+  return `the sum of the dioganals ${sumDiagonals}`;
+};
+//console.log(initialize2DSquareArray());
+//Exercice 4
+const array4 = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10],
+  [-1, 4, 6, 1, 7],
+  [3, 6, 1, 0, -7],
+  [-1, 5, 2, 6, 9],
+];
+const findNumberIn2DArray = (number) => {
+  for (let i = 0; i < array4.length; i++) {
+    for (let j = 0; j < array4[i].length; j++) {
+      if (number == array4[i][j]) {
+        return `its position is at row ${i+1} and column ${j+1}`;
+      }
+    }
+  }
+  return `not found`;
+};
+console.log(findNumberIn2DArray(9))
