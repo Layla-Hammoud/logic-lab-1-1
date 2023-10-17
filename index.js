@@ -111,4 +111,12 @@ const averageGrade = () => {
   const average = sum / students.length;
   return average;
 };
-console.log(averageGrade())
+// console.log(averageGrade())
+const failedStudents = () =>{
+    const arr = [...students]
+    const passedStudents = arr.filter((student) => student.grade > 60)
+    let names = [];
+    passedStudents.forEach((student)=>names.push(student.name))
+    return `The number of students got more than 60 are ${passedStudents.length}: ${names}`
+}
+console.log(failedStudents())
