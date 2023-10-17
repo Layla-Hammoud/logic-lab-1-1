@@ -95,9 +95,20 @@ const students = [
   { id: 20, name: "Tala", grade: 51 },
 ];
 //A
-const displayStudentsInfo = () =>{
-    for(let i = 0; i<students.length;i++){
-       console.log(`The student of id ${students[i].id} whose name is ${students[i].name} got a grade ${students[i].grade}.`) 
-    }
-}
-displayStudentsInfo()
+const displayStudentsInfo = () => {
+  for (let i = 0; i < students.length; i++) {
+    console.log(
+      `The student of id ${students[i].id} whose name is ${students[i].name} got a grade ${students[i].grade}.`
+    );
+  }
+};
+// displayStudentsInfo()
+const averageGrade = () => {
+  let sum = 0;
+  for (let i = 0; i < students.length; i++) {
+    sum += students[i].grade;
+  }
+  const average = sum / students.length;
+  return average;
+};
+console.log(averageGrade())
